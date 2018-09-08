@@ -14,4 +14,4 @@ This must be done prior to executing the tests.
 
 Here are the TFS build steps needed to integration Katalon tests with Sauce Labs and TFS:
 
-(screenshots/tfs-build-steps.png)
+![build steps](screenshots/tfs-build-steps.png)
