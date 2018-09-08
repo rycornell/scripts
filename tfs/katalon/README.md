@@ -5,7 +5,7 @@ Katalon Studio has the ability to execute tests in Sauce Labs, but there are som
   * Go to the Project menu > Settings > Execution > Default > Web UI > Remote
   * Set Remote web server url to 
   
-  https://{your sauce username}:{your sauce token}@ondemand.saucelabs.com:443/wd/hub
+    https://{your sauce username}:{your sauce token}@ondemand.saucelabs.com:443/wd/hub
   * Add at least 1 build capability, for example,
   
     browserName Chrome
