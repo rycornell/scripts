@@ -23,5 +23,5 @@ Katalon Studio has the ability to execute tests in Sauce Labs, but there are som
 * To run the Katalon test, make sure Katalon Studio is installed on the build agent.
 * The "Run Katalon Tests" steps runs Katalon from the command line:
 
-    "C:\Program Files (x86)\Katalon\Katalon_Studio_Windows_64-5.6.3\katalon.exe"
--noSplash  -runMode=console -consoleLog -projectPath="%BUILD_SOURCESDIRECTORY%\E2E.prj" -retry=0 -testSuitePath="Test Suites/Smoke Suite" -executionProfile="default" -browserType="Remote"
+    `"C:\Program Files (x86)\Katalon\Katalon_Studio_Windows_64-5.6.3\katalon.exe"
+-noSplash  -runMode=console -consoleLog -projectPath="%BUILD_SOURCESDIRECTORY%\E2E.prj" -retry=0 -testSuitePath="Test Suites/Smoke Suite" -executionProfile="default" -browserType="Remote"`
