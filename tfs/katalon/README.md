@@ -21,7 +21,7 @@ Katalon Studio has the ability to execute tests in Sauce Labs, but there are som
     This script sets the Sauce Labs "build" capability to the environment variable "SAUCE_BUILD_NAME".  This is required in order to fully integrate the Sauce Labs TFS extension.  In Katalon, the "build" capability is set in the project's *\settings\internal\com.kms.katalon.core.webui.remote.properties* file.  This file is a json file that contains the Sauce Labs connection info that was configured in the first step.  The script opens the file, converts it to a Json object, sets both the "build" and "name" capabilities, then saves the file.
 
 * To run the Katalon test, make sure Katalon Studio is installed on the build agent.
-* The "Run Katalon Tests" steps runs Katalon from the command line:
+* The "Run Katalon Tests" step runs Katalon from the command line.  Note that the -consoleLog flag is not included.  I've found that when that flag is included, the log will not be written to the VS console.
 
     `"C:\Program Files (x86)\Katalon\Katalon_Studio_Windows_64-5.6.3\katalon.exe"
--noSplash  -runMode=console -consoleLog -projectPath="%BUILD_SOURCESDIRECTORY%\E2E.prj" -retry=0 -testSuitePath="Test Suites/Smoke Suite" -executionProfile="default" -browserType="Remote"`
+-noSplash -runMode=console -projectPath="%BUILD_SOURCESDIRECTORY%\E2E.prj" -retry=0 -testSuitePath="Test Suites/Smoke Suite" -executionProfile="default" -browserType="Remote"`
