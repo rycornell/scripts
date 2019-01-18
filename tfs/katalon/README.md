@@ -26,6 +26,10 @@ Katalon Studio has the ability to execute tests in Sauce Labs, but there are som
     
     screenResolution 1920x1080
     
+  * In the end it should look like this:
+  
+  ![Desired Capabilities](screenshots/katalon-desired-capabilities.PNG)
+    
 * Save the project and push to source control
 * In TFS, create a build that looks like this:
 
