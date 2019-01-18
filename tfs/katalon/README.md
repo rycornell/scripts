@@ -13,7 +13,7 @@ Katalon Studio has the ability to execute tests in Sauce Labs, but there are som
     * In the Preferences column, click the button to open the preferences window
     * Set Remote web server url to 
   
-    http://${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY}@localhost:4445/wd/hub
+    https://${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY}@ondemand.saucelabs.com:443/wd/hub
     
     _(Note that we are not hard coding the username and access key into the url. We are using tokens that will be substituted when we run the tests on our CI server. If you're not using a CI server or source control, then you should enter your actual username and access key here.)_
   * Add the appropriate Sauce Labs capabilities, which can be found using the [Sauce Labs Platform Configurator](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/).  For example,
