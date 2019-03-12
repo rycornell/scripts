@@ -1,0 +1,166 @@
+{
+    "id": "00135013-ffdb-4ccf-ab08-00da60eae093",
+    "name": "RunKatalonTests",
+    "friendlyName": "Run Katalon Tests",
+    "description": "Run Katalon Tests",
+    "author": "Ryan Manns",
+    "helpMarkDown": "",
+    "category": "Build",
+    "visibility": [
+        "Build"
+    ],
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "minimumAgentVersion": "1.91.0",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "instanceNameFormat": "Run Katalon Tests",
+    "inputs": [
+        {
+            "name": "projectFolderPath",
+            "type": "string",
+            "label": "Katalon Project Folder Path",
+            "defaultValue": "",
+            "helpMarkDown": "This is the path of the folder than contains the Katalon project files.",
+            "required": false
+        },
+        {
+            "name": "isTestSuiteCollection",
+            "type": "boolean",
+            "label": "Test Suite Collection?",
+            "defaultValue": "true",
+            "helpMarkDown": "When checked, it will execute the specified test suite collection . When unchecked, it will execute the specified test suite.",
+            "required": true
+        },
+        {
+            "name": "testSuiteName",
+            "type": "string",
+            "label": "Test Suite / Test Suite Collection Name",
+            "defaultValue": "",
+            "helpMarkDown": "This is the name of the test suite or test suite collection.  The 'Test Suite Collection?' field indicates whether this is a test suite or a test suite collection.",
+            "required": false
+        },
+        {
+            "name": "executionProfile",
+            "type": "string",
+            "label": "Execution Profile",
+            "visibleRule": "isTestSuiteCollection = false",
+            "defaultValue": "",
+            "helpMarkDown": "This is the name of the Katalon execution profile to use.  This is probably named after an environment, such as dev, staging or prod.  This should be empty when running a test suite collection.",
+            "required": false
+        },
+        {
+            "name": "browserType",
+            "type": "string",
+            "label": "Browser Type",
+            "visibleRule": "isTestSuiteCollection = false",
+            "defaultValue": "",
+            "helpMarkDown": "This is the name of the browser to run the tests against.  This is usually a common browser, such as chrome or firefox, or a custom browser, such as saucelabs - safari.  This should be empty when running a test suite collection.",
+            "required": false
+        },
+        {
+            "name": "useProxy",
+            "type": "boolean",
+            "label": "Use Proxy?",
+            "defaultValue": "false",
+            "helpMarkDown": "When checked, it will use a proxy connection based on the proxy configuration entered below.",
+            "required": true
+        },
+        {
+            "name": "proxyOption",
+            "type": "picklist",
+            "label": "Proxy Option",
+            "visibleRule": "useProxy = true",
+            "defaultValue": "MANUAL_CONFIG",
+            "helpMarkDown": "The type of proxy configuration.",
+            "required": true,
+            "options": {
+                "MANUAL_CONFIG":"MANUAL_CONFIG",
+                "USE_SYSTEM":"USE_SYSTEM"
+            }
+        },
+        {
+            "name": "proxyServerType",
+            "type": "picklist",
+            "label": "Proxy Server Type",
+            "visibleRule": "useProxy = true",
+            "defaultValue": "HTTPS",
+            "helpMarkDown": "The type of proxy server.",
+            "required": true,
+            "options": {
+                "HTTP":"HTTP",
+                "HTTPS":"HTTPS",
+                "SOCKS":"SOCKS"
+            }
+        },
+        {
+            "name": "proxyServerAddress",
+            "type": "string",
+            "label": "Proxy Server Address",
+            "visibleRule": "useProxy = true",
+            "defaultValue": "",
+            "helpMarkDown": "The proxy server address, e.g. localhost, https://www.example.com.",
+            "required": false
+        },
+        {
+            "name": "proxyServerPort",
+            "type": "string",
+            "label": "Proxy Server Port",
+            "visibleRule": "useProxy = true",
+            "defaultValue": "",
+            "helpMarkDown": "The proxy server port.",
+            "required": false
+        },
+        {
+            "name": "retries",
+            "type": "string",
+            "label": "Number of retries",
+            "defaultValue": "0",
+            "helpMarkDown": "The number of time to re-run the tests if there are any failures.",
+            "required": false
+        },
+        {
+            "name": "retryFailedTestCasesOnly",
+            "type": "boolean",
+            "label": "Retry the failed test cases only?",
+            "defaultValue": "true",
+            "helpMarkDown": "Only applicable if any test cases fail.  If checked, only the failed test cases will be re-executed. If unchecked, all test cases will be re-executed.",
+            "required": false
+        },
+        {
+            "name": "emailRecipient",
+            "type": "string",
+            "label": "Email address where the test report should be sent.",
+            "defaultValue": "",
+            "helpMarkDown": "This is the email address where the test report should be sent. If left blank, a report will not be sent.",
+            "required": false
+        },
+        {
+            "name": "katalonVersion",
+            "type": "picklist",
+            "label": "Katalon Version",
+            "defaultValue": "5.10.0",
+            "helpMarkDown": "Version of Katalon to use.",
+            "required": true,
+            "options": {
+                "6.0.4":"6.0.4",
+                "5.10.0":"5.10.0",
+                "5.8.0":"5.8.0",
+                "5.6.3":"5.6.3"
+            }
+        }
+    ],
+    "execution": {
+        "PowerShell3": {
+            "target": "Katalon.ps1"
+        }
+    }
+}
